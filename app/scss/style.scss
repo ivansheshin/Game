@@ -1,2 +1,60 @@
-body{ display: flex;
+.game-interface{
+    display: flex;
+}
+.game-object{
+    position: relative;
+    top: 100px;
+    left: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+    &__section{
+        width: 300px;
+        height: 300px;
+        &_blue{
+            background-color: #01579B;
+            border-top-left-radius: 100%;
+        }
+        &_yellow{
+            background-color: #FFC107;
+            grid-column: 1/3;
+            grid-row: 2/3;
+            border-bottom-left-radius: 100%;
+        }
+        &_green{
+            background-color: #009688;
+            grid-column: 2/3;
+            grid-row: 2/3;
+            border-bottom-right-radius: 100%;
+
+        }
+        &_red{
+            background-color: #AD1457;
+            grid-column: 2/3;
+            grid-row: 1/3;
+            border-top-right-radius: 100%;
+        }
+        &_blue:hover,
+        &_blue:focus,
+        &_yellow:hover,
+        &_yellow:focus,
+        &_green:hover,
+        &_green:focus,
+        &_red:hover,
+        &_red:focus{
+            border: 5px solid #000;
+        }
+    }
+}
+.game-information{
+    position: relative;
+    top: 50px;
+    left: 30%;
+}
+.game-information__round{
+    font-size: 50px;
+}
+.game-information__btn{
+    font-size: 30px;
+    background-color: transparent;
 }
