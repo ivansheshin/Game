@@ -8,14 +8,14 @@
     left: 20%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 25px;
+    grid-gap: 3px;
+    padding: 3px;
+
     &__section{
         width: 300px;
         height: 300px;
-        // &:hover{
-        //     outline: 5px solid #000;
-        //     transition: 5s;
-        // }
+        transition: filter .3s ease-in-out;
+
     }
     &__section[data-id = "1"]{
         background-color: #01579B;
@@ -47,8 +47,7 @@
     &__section[data-id = "2"]:focus,
     &__section[data-id = "3"]:focus,
     &__section[data-id = "4"]:focus{
-        transition: .5s;
-        opacity: .8;
+        filter: opacity(0.8);
     }
 
 }

@@ -29,7 +29,7 @@
         const roundInfo = document.getElementById('round').innerHTML = newArray.length + 1; 
         roundInfo;
         for (let i = 0; i < newArray.length; i++){
-            newArray[i].classList.add(':hover');
+            newArray[i].classList.add(`:hover`);
         }
 
         
