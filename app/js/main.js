@@ -32,7 +32,6 @@
             clickedArray[i].classList.add(':hover');
         }
 
-
         
 })
 console.log(newArray);
@@ -47,4 +46,12 @@ function addElemArr (n) {
     }
 
     console.log(clickedArray)
+}
+
+for (let i = 0; i < newArray.length; i++){
+    for(let k = 0; k < clickedArray.length; k++){
+        if(newArray[i]===clickedArray[k]){
+            
+        }
+    }
 }
