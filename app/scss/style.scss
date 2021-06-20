@@ -42,8 +42,8 @@
     &__section[data-id = "2"]:hover,
     &__section[data-id = "3"]:hover,
     &__section[data-id = "4"]:hover{
-        outline: 10px solid goldenrod;
         transition: .5s;
+        opacity: .8;
     }
 
 }

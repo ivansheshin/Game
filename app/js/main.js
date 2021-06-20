@@ -11,7 +11,6 @@
 
     const newArray = [];
     const clickedArray = [];
-    const roundInfo = document.getElementById('round').innerHTML = `${clickedArray.length}`; 
     sectionBlue.addEventListener ('click', function() {
         newArray.push(sectionBlue);
     });
