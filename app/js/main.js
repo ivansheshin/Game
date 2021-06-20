@@ -50,8 +50,8 @@ function addElemArr (n) {
 
 for (let i = 0; i < newArray.length; i++){
     for(let k = 0; k < clickedArray.length; k++){
-        if(newArray[i]===clickedArray[k]){
-
+        if(newArray[i]!==clickedArray[k]){
+            const roundInfo = document.getElementById('round').innerHTML = 1;
         }
     }
 }
