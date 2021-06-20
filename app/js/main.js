@@ -12,24 +12,24 @@
     const newArray = [];
     const clickedArray = [];
     sectionBlue.addEventListener ('click', function() {
-        newArray.push(sectionBlue);
+        clickedArray.push(sectionBlue);
     });
     sectionYellow.addEventListener ('click', function() {
-        newArray.push(sectionYellow);
+        clickedArray.push(sectionYellow);
     });
     sectionGreen.addEventListener ('click', function() {
-        newArray.push(sectionGreen);
+        clickedArray.push(sectionGreen);
     });
     sectionRed.addEventListener ('click', function() {
-        newArray.push(sectionRed);
+        clickedArray.push(sectionRed);
     });
 
     button.addEventListener('click', function(){
         addElemArr(1);
-        const roundInfo = document.getElementById('round').innerHTML = clickedArray.length; 
+        const roundInfo = document.getElementById('round').innerHTML = newArray.length + 1; 
         roundInfo;
-        for (let i = 0; i < clickedArray.length; i++){
-            clickedArray[i].classList.add(':hover');
+        for (let i = 0; i < newArray.length; i++){
+            newArray[i].classList.add(':hover');
         }
 
         
@@ -42,16 +42,16 @@ function addElemArr (n) {
     for (let i = 1; i <= n; i++) {
         
         let x = arraySection[Math.floor(Math.random()*arraySection.length)]
-        clickedArray.push(x);
+        newArray.push(x);
     }
 
-    console.log(clickedArray)
+    console.log(newArray)
 }
 
 for (let i = 0; i < newArray.length; i++){
     for(let k = 0; k < clickedArray.length; k++){
         if(newArray[i]===clickedArray[k]){
-            
+
         }
     }
 }
