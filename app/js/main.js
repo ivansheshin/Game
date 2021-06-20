@@ -8,7 +8,6 @@
     const random = arraySection[Math.floor(Math.random()*arraySection.length)];
 
 
-
     const newArray = [];
     const clickedArray = [];
     sectionBlue.addEventListener ('click', function() {
@@ -29,13 +28,13 @@
         const roundInfo = document.getElementById('round').innerHTML = newArray.length + 1; 
         roundInfo;
         for (let i = 0; i < newArray.length; i++){
-            newArray[i].classList.add(`:hover`);
+            
+            newArray[i].classList.add(`animation`);
         }
-
         
 })
-console.log(newArray);
 
+console.log(newArray);
 
 function addElemArr (n) {
 
@@ -51,7 +50,7 @@ function addElemArr (n) {
 for (let i = 0; i < newArray.length; i++){
     for(let k = 0; k < clickedArray.length; k++){
         if(newArray[i]!==clickedArray[k]){
-            const roundInfo = document.getElementById('round').innerHTML = 1;
+            document.getElementById('round').innerHTML = 1;
         }
     }
 }
