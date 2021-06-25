@@ -3,17 +3,11 @@
     const roundValue = document.getElementById('round').textContent;
 
     let randomArray = [];
-    const clickedArray = [];
+    let clickedArray = [];
 
-
-    section.forEach((item)=>{
-        item.addEventListener('click', function (){
-            clickedArray.push(item);
-        })
-    })
     button.addEventListener('click', function(){
-        addElemRandom ();
-        // console.log(randomArray)
+        addElemRandom (clickedArray);
+        console.log(randomArray)
         randomArray.forEach((item, i) => {
             setTimeout (()=>{
                 item.classList.add('animation');         
@@ -24,37 +18,31 @@
                    
         });
 
-
-
-
     })
 
+    section.forEach((item)=>{
+        item.addEventListener('click', function (){
+            clickedArray.push(item);
+            console.log(clickedArray)
+            console.log(clickedArray[clickedArray.length - 1])
 
-
-    if (clickedArray[0]){
-        clickedArray[clickedArray.length - 1].addEventListener('click', function(){
-            addElemRandom ();
-        for (let i = 0; i < randomArray.length; i++){
-            for(let k = 0; k < clickedArray.length; k++){
-                if(randomArray[i]===clickedArray[k]){
-                    alert('ye vjkjltwcerf')
-                    // document.getElementById('round').textContent = roundValue + 1;
-                } else {
-                    // randomArray.length = 0;
-                    // document.getElementById('round').textContent = 1009000;
-                    alert('sadfa')
-                }
+            if(JSON.stringify(clickedArray) == JSON.stringify(randomArray)){
+                // alert('ebal tvoy mat\'')
+                document.getElementById('round').textContent = clickedArray.length;
+                clickedArray = []
+            } else {
+                // console.log('id')
             }
-        }
+
+        })
     })
+
+
+function addElemRandom (n) {
+    for (let i = n; i <= n; n++){
+        let x = section[Math.floor(Math.random()*section.length)]
+       randomArray.push(x);
     }
-    
-
-    // console.log(randomArray)
-    
-
-function addElemRandom () {
-       let x = section[Math.floor(Math.random()*section.length)]
-       randomArray.push(x); 
+        
 }
 
