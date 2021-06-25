@@ -1,5 +1,6 @@
 .animation{
     animation-name: animation;
+    animation-duration: .5s;
     @keyframes animation {
     20%{
         opacity: .8;

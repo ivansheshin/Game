@@ -1,56 +1,40 @@
-    const sectionBlue = document.querySelector('.game-object__section[data-id="1"');
-    const sectionYellow = document.querySelector('.game-object__section[data-id="2"');
-    const sectionGreen = document.querySelector('.game-object__section[data-id="3"');
-    const sectionRed = document.querySelector('.game-object__section[data-id="4"');
+    const section = document.querySelectorAll('.game-object__section');
     const button = document.querySelector('.game-information__btn');
-
-    const arraySection = [sectionBlue, sectionYellow, sectionGreen, sectionRed];
-    const random = arraySection[Math.floor(Math.random()*arraySection.length)];
-
-
-    const newArray = [];
+    const roundValue = document.getElementById('round').textContent;
+    const randomArray = [];
     const clickedArray = [];
-    sectionBlue.addEventListener ('click', function() {
-        clickedArray.push(sectionBlue);
-    });
-    sectionYellow.addEventListener ('click', function() {
-        clickedArray.push(sectionYellow);
-    });
-    sectionGreen.addEventListener ('click', function() {
-        clickedArray.push(sectionGreen);
-    });
-    sectionRed.addEventListener ('click', function() {
-        clickedArray.push(sectionRed);
-    });
 
+    section.forEach((item)=>{
+        item.addEventListener('click', function (){
+            clickedArray.push(item);
+        })
+    })
     button.addEventListener('click', function(){
-        addElemArr(1);
-        const roundInfo = document.getElementById('round').innerHTML = newArray.length + 1; 
-        roundInfo;
-        for (let i = 0; i < newArray.length; i++){
+        for (let i = 1; i <= 1; i++) {
+            addElemRandom ();
+        }
+        console.log(randomArray)
+        randomArray.forEach((item) => {
+               item.classList.add('animation'); 
+
             
-            newArray[i].classList.add(`animation`);
-        }
-        
-})
+            setTimeout(()=>{
+                item.classList.remove('animation')
+            }, 1000)       
+        });
 
-console.log(newArray);
+    })
 
-function addElemArr (n) {
-
-    for (let i = 1; i <= n; i++) {
-        
-        let x = arraySection[Math.floor(Math.random()*arraySection.length)]
-        newArray.push(x);
-    }
-
-    console.log(newArray)
+function addElemRandom () {
+       let x = section[Math.floor(Math.random()*section.length)]
+       randomArray.push(x); 
 }
 
-for (let i = 0; i < newArray.length; i++){
-    for(let k = 0; k < clickedArray.length; k++){
-        if(newArray[i]!==clickedArray[k]){
-            document.getElementById('round').innerHTML = 1;
-        }
-    }
-}
+
+// for (let i = 0; i < newArray.length; i++){
+//     for(let k = 0; k < clickedArray.length; k++){
+//         if(newArray[i]!==clickedArray[k]){
+//             document.getElementById('round').innerHTML = 1;
+//         }
+//     }
+// }
