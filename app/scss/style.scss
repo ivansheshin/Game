@@ -1,15 +1,14 @@
 .animation{
     animation-name: animation;
-    animation-duration: .8s;
     @keyframes animation {
-    10%{
+    20%{
         opacity: .8;
     }
     50% {
-        opacity: .5;
+        opacity: .7;
     }
-    90%{
-        opacity: 1;
+    80%{
+        opacity: .8;
     }
 }
 }
@@ -63,7 +62,8 @@
     &__section[data-id = "2"]:focus,
     &__section[data-id = "3"]:focus,
     &__section[data-id = "4"]:focus{
-        filter: opacity(0.8);
+        animation-name: animation;
+        animation-duration: .5s;
 
     }
 
