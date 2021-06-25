@@ -63,8 +63,7 @@
     &__section[data-id = "2"]:focus,
     &__section[data-id = "3"]:focus,
     &__section[data-id = "4"]:focus{
-        animation-name: animation;
-        animation-duration: .5s;
+        opacity: .8;
 
     }
 
