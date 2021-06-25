@@ -14,15 +14,15 @@
             addElemRandom ();
         }
         console.log(randomArray)
-        randomArray.forEach((item) => {
-               item.classList.add('animation'); 
-
-            
+        randomArray.forEach((item, i) => {
+            setTimeout (()=>{
+                item.classList.add('animation');         
             setTimeout(()=>{
                 item.classList.remove('animation')
-            }, 1000)       
+            }, 500)   
+            }, i*800)
+                   
         });
-
     })
 
 function addElemRandom () {
