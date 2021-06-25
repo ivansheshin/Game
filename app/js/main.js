@@ -10,9 +10,7 @@
         })
     })
     button.addEventListener('click', function(){
-        for (let i = 1; i <= 1; i++) {
             addElemRandom ();
-        }
         console.log(randomArray)
         randomArray.forEach((item, i) => {
             setTimeout (()=>{
