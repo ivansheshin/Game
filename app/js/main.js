@@ -19,6 +19,8 @@
             }, i*800)
                    
         });
+
+
     })
 
     section.forEach((item)=>{
@@ -26,7 +28,6 @@
             clickedArray.push(item);
             console.log(clickedArray)
             console.log(clickedArray[clickedArray.length - 1])
-
             compare(randomArray, clickedArray)
             
 
