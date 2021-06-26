@@ -27,8 +27,8 @@
     padding: 3px;
 
     &__section{
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
         transition: filter .3s ease-in-out;
         
 
@@ -69,6 +69,9 @@
 
 }
 .game-information{
+    display: flex;
+    align-items: center;
+    gap: 10px;
     position: relative;
     top: 50px;
     left: 30%;
@@ -78,5 +81,13 @@
 }
 .game-information__btn{
     font-size: 30px;
-    background-color: transparent;
+    background-color: #303F9F;
+    color: #FAFAFA;
+    border-radius: 10px;
+    border: 1px solid #009688;
+    &:focus,
+    &:hover{
+        background-color: #FAFAFA;
+        color: #303F9F;
+    }
 }
