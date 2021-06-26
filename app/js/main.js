@@ -6,7 +6,7 @@
     let clickedArray = [];
 
     button.addEventListener('click', function(){
-        addElemRandom ();
+        addElemRandom (roundValue);
         console.log(randomArray)
         randomArray.forEach((item, i) => {
             setTimeout (()=>{
@@ -26,30 +26,16 @@
             console.log(clickedArray)
             console.log(clickedArray[clickedArray.length - 1])
 
-            // if(JSON.stringify(clickedArray) == JSON.stringify(randomArray)){
-            //     // alert('ebal tvoy mat\'')
-            //     document.getElementById('round').textContent = clickedArray.length;
-            //     clickedArray = []
-            // } else {
-            //     // console.log('id')
-            // }
-                // if (randomArray.length !== clickedArray.lenght){ 
-                //     document.getElementById('round').textContent = 0;
-                //     alert ('you lose');
-                // }
-            //    if(JSON.stringify(clickedArray) == JSON.stringify(randomArray)){
-            //        console.log('ebal tvoy mat\'')
-            //     document.getElementById('round').textContent = clickedArray.length;
-            //     clickedArray = []
-            //    }
             compare(randomArray, clickedArray)
+            
+            
 
         })
     })
 
 
-function addElemRandom () {
-    for (let i = 0; i < 1 ; i++){
+function addElemRandom (n) {
+    for (let i = 0; i <= n ; i++){
         let x = section[Math.floor(Math.random()*section.length)]
        randomArray.push(x);
     }
@@ -58,10 +44,14 @@ function addElemRandom () {
 function compare (a, b) {
     if (a.length === b.length &&
     a.every((v, i) => v === b[i])){
+        document.getElementById('round').textContent = clickedArray.length
         clickedArray = []
         console.log(true)
+    } else if (a.length > b.length ) {
+
     } else {
-        console.log(false)
+       document.getElementById('round').textContent = 0;
+
     }
 }
   
