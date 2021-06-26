@@ -1,12 +1,12 @@
     const section = document.querySelectorAll('.game-object__section');
     const button = document.querySelector('.game-information__btn');
-    const roundValue = document.getElementById('round').textContent;
+    let roundValue = document.getElementById('round').textContent = 0;
 
     let randomArray = [];
     let clickedArray = [];
 
     button.addEventListener('click', function(){
-        addElemRandom (roundValue);
+        addElemRandom ();
         console.log(randomArray)
         randomArray.forEach((item, i) => {
             setTimeout (()=>{
@@ -34,8 +34,8 @@
     })
 
 
-function addElemRandom (n) {
-    for (let i = 0; i <= n ; i++){
+function addElemRandom () {
+    for (let i = 0; i < 1 ; i++){
         let x = section[Math.floor(Math.random()*section.length)]
        randomArray.push(x);
     }
@@ -49,10 +49,15 @@ function compare (a, b) {
         console.log(true)
     } else if (a.length > b.length ) {
 
-    } else {
+    } 
+     else {
        document.getElementById('round').textContent = 0;
-
+       randomArray = []
+       clickedArray = []
     }
 }
+
+
+
   
 
