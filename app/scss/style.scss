@@ -3,13 +3,16 @@
     animation-duration: .5s;
     @keyframes animation {
     20%{
+
         opacity: .8;
     }
     50% {
         opacity: .7;
+
     }
     80%{
         opacity: .8;
+
     }
 }
 }
@@ -56,16 +59,23 @@
             border-top-right-radius: 100%;
     }
     &__section[data-id = "1"]:hover,
+    &__section[data-id = "1"]:focus {
+        box-shadow: 0px 0px 20px #01579B;
+    }
     &__section[data-id = "2"]:hover,
+    &__section[data-id = "2"]:focus {
+        box-shadow: 0px 0px 20px #FFC107;
+    }
     &__section[data-id = "3"]:hover,
+    &__section[data-id = "3"]:focus {
+        box-shadow: 0px 0px 20px #009688;
+    }
     &__section[data-id = "4"]:hover,
-    &__section[data-id = "1"]:focus,
-    &__section[data-id = "2"]:focus,
-    &__section[data-id = "3"]:focus,
     &__section[data-id = "4"]:focus{
-        opacity: .8;
+        box-shadow: 0px 0px 20px #AD1457;
 
     }
+
 
 }
 .game-information{
