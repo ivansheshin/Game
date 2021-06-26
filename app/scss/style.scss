@@ -1,26 +1,30 @@
-.animation{
+.animation {
     animation-name: animation;
     animation-duration: .5s;
+
     @keyframes animation {
-    20%{
+        20% {
 
-        opacity: .8;
-    }
-    50% {
-        opacity: .7;
+            opacity: .8;
+        }
 
-    }
-    80%{
-        opacity: .8;
+        50% {
+            opacity: .7;
 
+        }
+
+        80% {
+            opacity: .8;
+
+        }
     }
 }
-}
 
-.game-interface{
+.game-interface {
     display: flex;
 }
-.game-object{
+
+.game-object {
     position: relative;
     top: 100px;
     left: 20%;
@@ -29,56 +33,65 @@
     grid-gap: 3px;
     padding: 3px;
 
-    &__section{
+    &__section {
         width: 200px;
         height: 200px;
         transition: filter .3s ease-in-out;
-        
+
 
     }
-    &__section[data-id = "1"]{
+
+    &__section[data-id="1"] {
         background-color: #01579B;
         border-top-left-radius: 100%;
     }
-    &__section[data-id = "2"]{
+
+    &__section[data-id="2"] {
         background-color: #FFC107;
         grid-column: 1/3;
         grid-row: 2/3;
         border-bottom-left-radius: 100%;
     }
-    &__section[data-id = "3"]{
+
+    &__section[data-id="3"] {
         background-color: #009688;
-            grid-column: 2/3;
-            grid-row: 2/3;
-            border-bottom-right-radius: 100%;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        border-bottom-right-radius: 100%;
     }
-    &__section[data-id = "4"]{
+
+    &__section[data-id="4"] {
         background-color: #AD1457;
-            grid-column: 2/3;
-            grid-row: 1/3;
-            border-top-right-radius: 100%;
+        grid-column: 2/3;
+        grid-row: 1/3;
+        border-top-right-radius: 100%;
     }
-    &__section[data-id = "1"]:hover,
-    &__section[data-id = "1"]:focus {
+
+    &__section[data-id="1"]:hover,
+    &__section[data-id="1"]:focus {
         box-shadow: 0px 0px 20px #01579B;
     }
-    &__section[data-id = "2"]:hover,
-    &__section[data-id = "2"]:focus {
+
+    &__section[data-id="2"]:hover,
+    &__section[data-id="2"]:focus {
         box-shadow: 0px 0px 20px #FFC107;
     }
-    &__section[data-id = "3"]:hover,
-    &__section[data-id = "3"]:focus {
+
+    &__section[data-id="3"]:hover,
+    &__section[data-id="3"]:focus {
         box-shadow: 0px 0px 20px #009688;
     }
-    &__section[data-id = "4"]:hover,
-    &__section[data-id = "4"]:focus{
+
+    &__section[data-id="4"]:hover,
+    &__section[data-id="4"]:focus {
         box-shadow: 0px 0px 20px #AD1457;
 
     }
 
 
 }
-.game-information{
+
+.game-information {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -86,17 +99,20 @@
     top: 50px;
     left: 30%;
 }
-.game-information__round{
+
+.game-information__round {
     font-size: 50px;
 }
-.game-information__btn{
+
+.game-information__btn {
     font-size: 30px;
     background-color: #303F9F;
     color: #FAFAFA;
     border-radius: 10px;
     border: 1px solid #009688;
+
     &:focus,
-    &:hover{
+    &:hover {
         background-color: #FAFAFA;
         color: #303F9F;
     }
