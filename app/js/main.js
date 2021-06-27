@@ -43,8 +43,7 @@ function compare(a, b) {
             for (let i = 0; i < b.length + 1; i++){
                 document.getElementById('round').textContent = i
             }
-        // document.getElementById('round').textContent = b.length
-        // document.getElementById('round').textContent = +roundValue + 1
+
         clickedArray = []
     } else if (a.length > b.length) {
 
