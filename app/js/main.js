@@ -2,12 +2,14 @@ const section = document.querySelectorAll('.game-object__section');
 const button = document.querySelector('.game-information__btn');
 let roundValue = document.getElementById('round').textContent;
 
+
 let randomArray = [];
 let clickedArray = [];
 
 button.addEventListener('click', function () {
-    addElemRandom();
 
+    button.disabled = true;
+    addElemRandom();
     randomArray.forEach((item, i) => {
         setTimeout(() => {
             item.classList.add('animation');
@@ -15,15 +17,14 @@ button.addEventListener('click', function () {
                 item.classList.remove('animation')
             }, 500)
         }, i * 800)
-    });   
-
+    });     
 })
 
-let secListener = section.forEach((item) => {
+section.forEach((item) => { 
     item.addEventListener('click', function () {
         clickedArray.push(item);
         compare(randomArray, clickedArray);
-
+        button.disabled = false
     })
 })
 
@@ -39,12 +40,16 @@ function addElemRandom() {
 function compare(a, b) {
     if (a.length === b.length &&
         a.every((v, i) => v === b[i])) {
-        document.getElementById('round').textContent = b.length
+            for (let i = 0; i < b.length + 1; i++){
+                document.getElementById('round').textContent = i
+            }
+        // document.getElementById('round').textContent = b.length
+        // document.getElementById('round').textContent = +roundValue + 1
         clickedArray = []
-        console.log(true)
     } else if (a.length > b.length) {
 
-    } else {
+    } 
+    else {
         document.getElementById('round').textContent = 0;
         randomArray = []
         clickedArray = []
