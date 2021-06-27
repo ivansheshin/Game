@@ -6,8 +6,12 @@ let randomArray = [];
 let clickedArray = [];
 
 button.addEventListener('click', function () {
-    addElemRandom();
-    console.log(randomArray)
+    if(randomArray.length - clickedArray.length < 0){
+        randomArray = []
+    }
+    else{
+         addElemRandom();
+    // console.log(randomArray)
     randomArray.forEach((item, i) => {
         setTimeout(() => {
             item.classList.add('animation');
@@ -16,15 +20,16 @@ button.addEventListener('click', function () {
             }, 500)
         }, i * 800)
     });
+    }
+    
 })
 
-section.forEach((item) => {
+    section.forEach((item) => {
     item.addEventListener('click', function () {
         clickedArray.push(item);
-        console.log(clickedArray)
-        console.log(clickedArray[clickedArray.length - 1])
+        // console.log(clickedArray)
+        // console.log(clickedArray[clickedArray.length - 1])
         compare(randomArray, clickedArray)
-
 
     })
 })
@@ -51,3 +56,4 @@ function compare(a, b) {
         clickedArray = []
     }
 }
+console.log(clickedArray)
