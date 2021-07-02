@@ -115,4 +115,8 @@
         background-color: #FAFAFA;
         color: #303F9F;
     }
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 50%;
+    }
 }

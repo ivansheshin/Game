@@ -1,14 +1,11 @@
 const section = document.querySelectorAll('.game-object__section');
 const button = document.querySelector('.game-information__btn');
-// rename const
-let roundValue = document.getElementById('round').textContent;
-
+let roundValue = document.getElementById('round');
 
 let randomArray = [];
 let clickedArray = [];
 
-button.addEventListener('click', function () {
-    // stick to codestyle (use only arr func's)
+button.addEventListener('click', () => {
 
     button.disabled = true;
     addElemRandom();
@@ -19,58 +16,44 @@ button.addEventListener('click', function () {
                 item.classList.remove('animation')
             }, 500)
         }, i * 800)
-    });     
+    });
 })
 
-section.forEach((item) => { 
-    item.addEventListener('click', function () {
+section.forEach((item) => {
+    item.addEventListener('click', () => {
         clickedArray.push(item);
-        compare(randomArray, clickedArray);
-        button.disabled = false
-        
-//         if (compare(randomArray, clickedArray)) {
-//             // nextRound()
-//         } else {
-//             // endGame()
-//         }
+
+        if (compareRandomAndClickedArr()) {
+            nextRound();
+            button.disabled = false;
+        } else if (clickedArray.length !== randomArray.length) return
+        else {
+            endGame();
+            button.disabled = false
+        }
     })
 })
 
 
 function addElemRandom() {
-        for (let i = 0; i < 1; i++) {
-            // wtf
-                let x = section[Math.floor(Math.random() * section.length)]
-                // use const
-                randomArray.push(x);
-        }
-        
+    const x = section[Math.floor(Math.random() * section.length)]
+    randomArray.push(x);
 }
 
-function compare(a, b) {
-//     if (a.length > b.length) return;
 
-    // use readble var names
-    if (randomArray.length === clickedArray.length &&
-        a.every((v, i) => v === b[i])) {
-        // use some variable for every
-            for (let i = 0; i < b.length + 1; i++){
-                // do not use loop
-                document.getElementById('round').textContent = i
-                // use roundValue let
-            }
+function compareRandomAndClickedArr() {
+    return (randomArray.length === clickedArray.length && clickedArray.every((elem, index) => elem === randomArray[index]))
 
-        clickedArray = []
-        // put this in nexRound func
-    } else if (a.length > b.length) {
-// ?
-    } 
-    else {
-        document.getElementById('round').textContent = 0;
-        // use roundValue let
-        randomArray = []
-        clickedArray = []
-        // put this in gameOver/endGame func
-    }
-    // 
+}
+
+function nextRound() {
+    roundValue.textContent = clickedArray.length;
+    clickedArray = [];
+}
+
+function endGame() {
+    roundValue.textContent = 0;
+    randomArray = [];
+    clickedArray = [];
+
 }
